@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven {
+            url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+            println "OSS_URL $url"
+//            credentials {
+//                //Need to find right way to provide nexus username and password. Right now added as text in gradle.properties
+//                username System.getenv("NEXUS_USERNAME") as String ?: NexusUsername
+//                password System.getenv("NEXUS_PASSWORD") as String ?: NexusPassword
+//            }
+        }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Rekomendasi Film"
+include ':app'
